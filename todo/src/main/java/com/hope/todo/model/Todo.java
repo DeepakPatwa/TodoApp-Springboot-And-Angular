@@ -24,7 +24,7 @@ public class Todo {
     @Column(columnDefinition = "INTEGER DEFAULT '0'")
     private boolean completed;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

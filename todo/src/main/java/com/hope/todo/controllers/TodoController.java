@@ -54,13 +54,13 @@ public class TodoController {
         return responseEntity;
     }
 
-//    @PutMapping("todo/{id}")
-//    public ResponseEntity<?> updateTodo(@PathVariable("id") int id, @RequestBody Todo todo)
-//    {
-//        ResponseEntity responseEntity;
-//
-//        Todo todo= todoService.updateTodo(id, todo);
-//        responseEntity=new ResponseEntity<Todo>(todo, HttpStatus.OK);
-//        return responseEntity;
-//    }
+    @PutMapping("todo/{id}")
+    public ResponseEntity<?> updateTodo(@PathVariable("id") int id, @RequestBody Todo todo)
+    {
+        ResponseEntity responseEntity;
+
+        Todo todo1= todoService.updateTodo(id, todo);
+        responseEntity=new ResponseEntity<Todo>(todo1, HttpStatus.OK);
+        return responseEntity;
+    }
 }

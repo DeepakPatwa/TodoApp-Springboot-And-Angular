@@ -40,13 +40,13 @@ public class TodoServiceImpl implements TodoService {
 
         Todo todo1=todoRepository.findById(id);
 
-        if(!todo.equals(todo1))
-        {
-            Todo updatedTodo=todoRepository.save(todo1);
+//        if(!todo.equals(todo1))
+//        {
+            Todo updatedTodo=todoRepository.save(todo);
             return updatedTodo;
-        }
+//        }
 
-        return todo;
+
     }
 
     @Override
