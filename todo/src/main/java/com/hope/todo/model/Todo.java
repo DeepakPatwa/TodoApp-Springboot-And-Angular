@@ -63,4 +63,15 @@ public class Todo {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
+
+    @Override
+    public String toString() {
+        return "Todo{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", createts=" + createts +
+                ", completed=" + completed +
+                '}';
+    }
 }

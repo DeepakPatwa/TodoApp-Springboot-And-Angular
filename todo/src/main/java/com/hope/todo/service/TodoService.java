@@ -15,4 +15,8 @@ public interface TodoService {
 
     Todo deleteTodo(int id);
 
+    Todo getTodo(int id);
+
+    List<Todo> getTodoOnStatus( boolean status);
+
 }

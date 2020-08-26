@@ -21,7 +21,6 @@ public class TodoServiceImpl implements TodoService {
     @Override
     public Todo saveTodo(Todo todo) {
 
-//        if(todoRepository.existsByTitle(todo.getTitle()))
         Todo todo1=todoRepository.save(todo);
 
         return todo1;
@@ -40,24 +39,41 @@ public class TodoServiceImpl implements TodoService {
 
         Todo todo1=todoRepository.findById(id);
 
-//        if(!todo.equals(todo1))
-//        {
+        if(todo1!=null)
+        {
             Todo updatedTodo=todoRepository.save(todo);
             return updatedTodo;
-//        }
-
-
+        }
+        return null;
     }
 
     @Override
     public Todo deleteTodo(int id) {
 
         Todo todo1=todoRepository.findById(id);
-        if(!todo1.equals(null))
+        if(todo1!=null)
         {
             todoRepository.deleteById(id);
             return todo1;
         }
         return null;
+    }
+
+    @Override
+    public Todo getTodo(int id){
+        Todo todo = todoRepository.findById(id);
+        if(todo != null)
+        {
+            return todo;
+        }
+        return null;
+    }
+
+    @Override
+    public List<Todo> getTodoOnStatus(boolean status){
+        List<Todo> todoList = todoRepository.findByCompleted(status);
+
+        return todoList;
+
     }
 }

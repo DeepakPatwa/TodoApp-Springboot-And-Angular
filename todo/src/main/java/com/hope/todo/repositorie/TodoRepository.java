@@ -17,5 +17,5 @@ public interface TodoRepository extends CrudRepository<Todo, Integer> {
 
     List<Todo> findAll();
 
-
+    List<Todo> findByCompleted(boolean completed);
 }
